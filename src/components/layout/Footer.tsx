@@ -19,7 +19,7 @@ const Footer = () => {
               <span className="font-bold text-2xl text-white">GameSet</span>
             </div>
             <p className="text-gray-300 mb-4">
-              Book sports courts instantly without the hassle of direct communication.
+              Reserve quadras esportivas instantaneamente sem o incômodo da comunicação direta.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-gamesetGreen transition-colors">
@@ -36,38 +36,40 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gamesetGreen">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4 text-gamesetGreen">Links Rápidos</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/courts" className="text-gray-300 hover:text-white transition-colors">Find Courts</Link></li>
-              <li><Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</Link></li>
-              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">Início</Link></li>
+              <li><Link to="/courts" className="text-gray-300 hover:text-white transition-colors">Encontrar Quadras</Link></li>
+              <li><Link to="/how-it-works" className="text-gray-300 hover:text-white transition-colors">Como Funciona</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">Sobre Nós</Link></li>
             </ul>
           </div>
 
           {/* Sports */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gamesetGreen">Sports</h3>
+            <h3 className="font-semibold text-lg mb-4 text-gamesetGreen">Esportes</h3>
             <ul className="space-y-2">
-              <li><Link to="/courts?sport=football" className="text-gray-300 hover:text-white transition-colors">Football</Link></li>
-              <li><Link to="/courts?sport=basketball" className="text-gray-300 hover:text-white transition-colors">Basketball</Link></li>
-              <li><Link to="/courts?sport=tennis" className="text-gray-300 hover:text-white transition-colors">Tennis</Link></li>
-              <li><Link to="/courts?sport=volleyball" className="text-gray-300 hover:text-white transition-colors">Volleyball</Link></li>
+              <li><Link to="/courts?sport=football" className="text-gray-300 hover:text-white transition-colors">Futebol</Link></li>
+              <li><Link to="/courts?sport=basketball" className="text-gray-300 hover:text-white transition-colors">Basquete</Link></li>
+              <li><Link to="/courts?sport=tennis" className="text-gray-300 hover:text-white transition-colors">Tênis</Link></li>
+              <li><Link to="/courts?sport=volleyball" className="text-gray-300 hover:text-white transition-colors">Vôlei</Link></li>
               <li><Link to="/courts?sport=futsal" className="text-gray-300 hover:text-white transition-colors">Futsal</Link></li>
+              <li><Link to="/courts?sport=beachtennis" className="text-gray-300 hover:text-white transition-colors">Beach Tennis</Link></li>
+              <li><Link to="/courts?sport=footvolley" className="text-gray-300 hover:text-white transition-colors">Futevôlei</Link></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4 text-gamesetGreen">Contact Us</h3>
+            <h3 className="font-semibold text-lg mb-4 text-gamesetGreen">Contato</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-3">
                 <Mail size={18} className="text-gamesetGreen" />
-                <a href="mailto:info@gameset.com" className="text-gray-300 hover:text-white transition-colors">info@gameset.com</a>
+                <a href="mailto:contato@gameset.com.br" className="text-gray-300 hover:text-white transition-colors">contato@gameset.com.br</a>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={18} className="text-gamesetGreen" />
-                <a href="tel:+123456789" className="text-gray-300 hover:text-white transition-colors">+1 (234) 567-89</a>
+                <a href="tel:+5511999999999" className="text-gray-300 hover:text-white transition-colors">(11) 99999-9999</a>
               </li>
             </ul>
           </div>
@@ -76,7 +78,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="pt-8 mt-8 border-t border-gray-700">
           <p className="text-center text-gray-400">
-            &copy; {new Date().getFullYear()} GameSet. All rights reserved.
+            &copy; {new Date().getFullYear()} GameSet. Todos os direitos reservados.
           </p>
         </div>
       </div>

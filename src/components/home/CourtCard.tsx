@@ -37,7 +37,7 @@ const CourtCard = ({ court }: CourtCardProps) => {
           {court.availableToday && (
             <div className="absolute top-2 right-2 bg-gamesetGreen px-2 py-1 rounded-full text-white text-xs font-medium flex items-center">
               <Clock size={12} className="mr-1" />
-              Available today
+              Disponível hoje
             </div>
           )}
         </div>
@@ -58,14 +58,14 @@ const CourtCard = ({ court }: CourtCardProps) => {
           
           <div className="mt-4 flex items-center justify-between">
             <span className="font-bold text-gamesetDark">
-              ${court.pricePerHour}/hour
+              R${court.pricePerHour}/hora
             </span>
             <button 
               onClick={() => setBookingModalOpen(true)}
               className="flex items-center text-sm bg-gamesetGreen text-white px-3 py-1.5 rounded-lg hover:bg-gamesetGreen/90 transition-colors"
             >
               <Calendar size={16} className="mr-1" />
-              Book now
+              Reservar agora
             </button>
           </div>
         </div>

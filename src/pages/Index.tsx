@@ -15,13 +15,13 @@ const Index = () => {
     setSearchQuery(query);
     setSearchLocation(location);
     // In a real app, this could trigger an API call
-    console.log(`Searching for "${query}" in "${location}"`);
+    console.log(`Buscando por "${query}" em "${location}"`);
   };
 
   const handleSportFilter = (sportId: string) => {
     setSportFilter(sportId);
     // In a real app, this could trigger an API call
-    console.log(`Filtering by sport: ${sportId}`);
+    console.log(`Filtrando por esporte: ${sportId}`);
   };
 
   return (
@@ -36,11 +36,11 @@ const Index = () => {
         <section className="py-12 bg-gray-50">
           <div className="gameset-container">
             <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-              <h2 className="text-3xl font-bold">Find Your Perfect Court</h2>
+              <h2 className="text-3xl font-bold">Encontre Sua Quadra Perfeita</h2>
               <p className="text-gray-600">
                 {sportFilter === 'all' 
-                  ? 'Discover courts for all sports near you' 
-                  : `Showing ${sportFilter} courts`}
+                  ? 'Descubra quadras para todos os esportes perto de você' 
+                  : `Mostrando quadras de ${sportFilter}`}
               </p>
             </div>
             
@@ -59,16 +59,16 @@ const Index = () => {
         {/* How It Works Section */}
         <section className="py-16 bg-white">
           <div className="gameset-container">
-            <h2 className="text-3xl font-bold text-center mb-12">How GameSet Works</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Como o GameSet Funciona</h2>
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gamesetGreen/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-gamesetGreen">1</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Find a Court</h3>
+                <h3 className="text-xl font-semibold mb-2">Encontre uma Quadra</h3>
                 <p className="text-gray-600">
-                  Search for courts by location, sport type, or facilities. Filter results to match your preferences.
+                  Busque quadras por localização, tipo de esporte ou instalações. Filtre os resultados de acordo com suas preferências.
                 </p>
               </div>
               
@@ -76,9 +76,9 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gamesetGreen/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-gamesetGreen">2</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Book Instantly</h3>
+                <h3 className="text-xl font-semibold mb-2">Reserve Instantaneamente</h3>
                 <p className="text-gray-600">
-                  Select your preferred date and time. Confirm your booking with secure online payment.
+                  Selecione sua data e horário preferidos. Confirme sua reserva com pagamento online seguro.
                 </p>
               </div>
               
@@ -86,9 +86,9 @@ const Index = () => {
                 <div className="w-16 h-16 bg-gamesetGreen/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-gamesetGreen">3</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Play & Enjoy</h3>
+                <h3 className="text-xl font-semibold mb-2">Jogue & Divirta-se</h3>
                 <p className="text-gray-600">
-                  Receive confirmation and directions. Arrive at the court and enjoy your game without any hassle.
+                  Receba confirmação e indicações. Chegue na quadra e aproveite seu jogo sem qualquer complicação.
                 </p>
               </div>
             </div>
@@ -98,12 +98,12 @@ const Index = () => {
         {/* CTA Section */}
         <section className="py-16 bg-gamesetDark">
           <div className="gameset-container text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Play?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Pronto para Jogar?</h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join thousands of players who are already booking courts through GameSet. Fast, reliable, and hassle-free.
+              Junte-se a milhares de jogadores que já estão reservando quadras através do GameSet. Rápido, confiável e sem complicações.
             </p>
             <button className="btn-primary text-lg px-8 py-4">
-              Get Started Now
+              Comece Agora
             </button>
           </div>
         </section>

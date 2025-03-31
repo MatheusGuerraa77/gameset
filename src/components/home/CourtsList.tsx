@@ -12,48 +12,48 @@ interface CourtsListProps {
 const mockCourts: Court[] = [
   {
     id: '1',
-    name: 'Green Valley Soccer Field',
-    location: 'Downtown, 2.5 km away',
+    name: 'Campo de Futebol Vale Verde',
+    location: 'Centro, 2.5 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1600679472829-3044539ce8ed?q=80&w=400',
-    sportType: 'Football',
+    sportType: 'Futebol',
     rating: 4.8,
     pricePerHour: 35,
     availableToday: true
   },
   {
     id: '2',
-    name: 'Urban Basketball Court',
-    location: 'West District, 1.8 km away',
+    name: 'Quadra de Basquete Urbana',
+    location: 'Zona Oeste, 1.8 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?q=80&w=400',
-    sportType: 'Basketball',
+    sportType: 'Basquete',
     rating: 4.5,
     pricePerHour: 25,
     availableToday: true
   },
   {
     id: '3',
-    name: 'Sunshine Tennis Center',
-    location: 'East Side, 3.2 km away',
+    name: 'Centro de Tênis Sunshine',
+    location: 'Zona Leste, 3.2 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=400',
-    sportType: 'Tennis',
+    sportType: 'Tênis',
     rating: 4.9,
     pricePerHour: 40,
     availableToday: false
   },
   {
     id: '4',
-    name: 'Beach Volleyball Arena',
-    location: 'Coastal Area, 5.1 km away',
+    name: 'Arena de Vôlei de Praia',
+    location: 'Área Costeira, 5.1 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=400',
-    sportType: 'Volleyball',
+    sportType: 'Vôlei',
     rating: 4.7,
     pricePerHour: 30,
     availableToday: true
   },
   {
     id: '5',
-    name: 'Indoor Futsal Center',
-    location: 'North District, 2.3 km away',
+    name: 'Centro de Futsal Indoor',
+    location: 'Zona Norte, 2.3 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=400',
     sportType: 'Futsal',
     rating: 4.6,
@@ -62,13 +62,33 @@ const mockCourts: Court[] = [
   },
   {
     id: '6',
-    name: 'Community Handball Court',
-    location: 'South Area, 1.5 km away',
+    name: 'Quadra de Handebol Comunitária',
+    location: 'Zona Sul, 1.5 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=400',
-    sportType: 'Handball',
+    sportType: 'Handebol',
     rating: 4.3,
     pricePerHour: 20,
     availableToday: false
+  },
+  {
+    id: '7',
+    name: 'Arena de Beach Tennis',
+    location: 'Praia Grande, 4.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
+    rating: 4.7,
+    pricePerHour: 50,
+    availableToday: true
+  },
+  {
+    id: '8',
+    name: 'Centro de Futevôlei',
+    location: 'Praia do Sol, 3.8 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1610805796122-f8e21cd640a6?q=80&w=400',
+    sportType: 'Futevôlei',
+    rating: 4.6,
+    pricePerHour: 40,
+    availableToday: true
   }
 ];
 
@@ -95,7 +115,7 @@ const CourtsList = ({ sportFilter, searchQuery, searchLocation }: CourtsListProp
     }
     
     // Apply location filter (simplified for demo)
-    if (searchLocation && searchLocation !== 'Current location') {
+    if (searchLocation && searchLocation !== 'Localização atual') {
       const location = searchLocation.toLowerCase();
       filtered = filtered.filter(court => 
         court.location.toLowerCase().includes(location)
@@ -108,8 +128,8 @@ const CourtsList = ({ sportFilter, searchQuery, searchLocation }: CourtsListProp
   if (filteredCourts.length === 0) {
     return (
       <div className="text-center py-12">
-        <h3 className="text-xl font-medium text-gray-600">No courts found</h3>
-        <p className="mt-2 text-gray-500">Try changing your filters or search criteria</p>
+        <h3 className="text-xl font-medium text-gray-600">Nenhuma quadra encontrada</h3>
+        <p className="mt-2 text-gray-500">Tente alterar seus filtros ou critérios de busca</p>
       </div>
     );
   }

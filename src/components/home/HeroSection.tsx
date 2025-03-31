@@ -16,25 +16,25 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
       <div className="gameset-container relative">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-            Book Sports Courts <span className="text-gamesetGreen">Instantly</span>
+            Reserve Quadras <span className="text-gamesetGreen">Instantaneamente</span>
           </h1>
           <p className="text-xl text-gray-300 mb-8">
-            Find and reserve your perfect court in seconds, without the hassle of phone calls or direct communication.
+            Encontre e reserve sua quadra perfeita em segundos, sem o incômodo de ligações ou comunicação direta.
           </p>
 
           {/* Feature icons */}
           <div className="flex flex-wrap justify-center gap-6 mb-10">
             <div className="flex items-center text-white">
               <Search size={20} className="text-gamesetGreen mr-2" />
-              <span>Find nearby courts</span>
+              <span>Encontre quadras próximas</span>
             </div>
             <div className="flex items-center text-white">
               <Calendar size={20} className="text-gamesetGreen mr-2" />
-              <span>Book in few clicks</span>
+              <span>Reserve em poucos cliques</span>
             </div>
             <div className="flex items-center text-white">
               <MapPin size={20} className="text-gamesetGreen mr-2" />
-              <span>GPS navigation</span>
+              <span>Navegação GPS</span>
             </div>
           </div>
 
