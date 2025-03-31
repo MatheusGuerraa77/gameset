@@ -15,13 +15,15 @@ const SportFilter = ({ onFilterChange }: SportFilterProps) => {
   const [activeSport, setActiveSport] = useState('all');
 
   const sports: Sport[] = [
-    { id: 'all', name: 'All Sports', icon: '🏆' },
-    { id: 'football', name: 'Football', icon: '⚽' },
-    { id: 'basketball', name: 'Basketball', icon: '🏀' },
-    { id: 'tennis', name: 'Tennis', icon: '🎾' },
-    { id: 'volleyball', name: 'Volleyball', icon: '🏐' },
+    { id: 'all', name: 'Todos os Esportes', icon: '🏆' },
+    { id: 'football', name: 'Futebol', icon: '⚽' },
+    { id: 'basketball', name: 'Basquete', icon: '🏀' },
+    { id: 'tennis', name: 'Tênis', icon: '🎾' },
+    { id: 'volleyball', name: 'Vôlei', icon: '🏐' },
     { id: 'futsal', name: 'Futsal', icon: '⚽' },
-    { id: 'handball', name: 'Handball', icon: '🤾' },
+    { id: 'handball', name: 'Handebol', icon: '🤾' },
+    { id: 'beachtennis', name: 'Beach Tennis', icon: '🎾' },
+    { id: 'footvolley', name: 'Futevôlei', icon: '🏐' },
   ];
 
   const handleSportClick = (sportId: string) => {
