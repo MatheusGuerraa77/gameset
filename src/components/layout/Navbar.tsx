@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, User, LogIn, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog } from '@/components/ui/dialog';
@@ -10,10 +10,15 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [authType, setAuthType] = useState<'login' | 'register'>('login');
+  const location = useLocation();
 
   const openAuthModal = (type: 'login' | 'register') => {
     setAuthType(type);
     setAuthModalOpen(true);
+  };
+
+  const isActive = (path: string) => {
+    return location.pathname === path ? "text-gamesetGreen" : "text-gamesetDark hover:text-gamesetGreen";
   };
 
   return (
@@ -33,10 +38,10 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gamesetDark hover:text-gamesetGreen font-medium transition-colors">Home</Link>
-            <Link to="/courts" className="text-gamesetDark hover:text-gamesetGreen font-medium transition-colors">Quadras</Link>
-            <Link to="/how-it-works" className="text-gamesetDark hover:text-gamesetGreen font-medium transition-colors">Como funciona</Link>
-            <Link to="/proprietario" className="text-gamesetDark hover:text-gamesetGreen font-medium transition-colors flex items-center gap-1">
+            <Link to="/" className={`font-medium transition-colors ${isActive('/')}`}>Home</Link>
+            <Link to="/courts" className={`font-medium transition-colors ${isActive('/courts')}`}>Quadras</Link>
+            <Link to="/how-it-works" className={`font-medium transition-colors ${isActive('/how-it-works')}`}>Como funciona</Link>
+            <Link to="/proprietario" className={`font-medium transition-colors flex items-center gap-1 ${isActive('/proprietario')}`}>
               <Users size={16} />
               Área do Proprietário
             </Link>
