@@ -1,6 +1,8 @@
 
 import { useState } from 'react';
 import { Calendar, MapPin, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 import SearchBar from '../ui/SearchBar';
 
 interface HeroSectionProps {
@@ -39,8 +41,17 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
           </div>
 
           {/* Search form */}
-          <div className="bg-white p-4 md:p-6 rounded-xl shadow-lg">
+          <div className="bg-white p-4 md:p-6 rounded-xl shadow-lg mb-8">
             <SearchBar onSearch={onSearch} />
+          </div>
+          
+          {/* Proprietários CTA */}
+          <div className="mt-2">
+            <Link to="/proprietario">
+              <Button variant="outline" className="text-white border-white hover:bg-white/10">
+                Sou proprietário de quadra
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
