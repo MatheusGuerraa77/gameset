@@ -16,7 +16,8 @@ import {
   CheckCircle,
   XCircle,
   ChevronRight,
-  MapPin
+  MapPin,
+  PhoneCall
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -473,7 +474,7 @@ const OwnerDashboard = () => {
                           </div>
                         </div>
                         <Button variant="ghost" size="sm">
-                          <Phone size={18} className="mr-2" /> Ligar
+                          <PhoneCall size={18} className="mr-2" /> Ligar
                         </Button>
                       </div>
 
