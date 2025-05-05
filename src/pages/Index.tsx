@@ -5,6 +5,45 @@ import Footer from '@/components/layout/Footer';
 import HeroSection from '@/components/home/HeroSection';
 import CourtsList from '@/components/home/CourtsList';
 import SportFilter from '@/components/home/SportFilter';
+import CourtsMap from '@/components/maps/CourtsMap';
+import { Court } from '@/components/home/CourtCard';
+import { Button } from '@/components/ui/button';
+import { MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+// Mock data para o mapa da página inicial
+const featuredCourts: Court[] = [
+  {
+    id: '1',
+    name: 'Campo de Futebol Vale Verde',
+    location: 'Centro, 2.5 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1600679472829-3044539ce8ed?q=80&w=400',
+    sportType: 'Futebol',
+    rating: 4.8,
+    pricePerHour: 35,
+    availableToday: true
+  },
+  {
+    id: '3',
+    name: 'Centro de Tênis Sunshine',
+    location: 'Zona Leste, 3.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=400',
+    sportType: 'Tênis',
+    rating: 4.9,
+    pricePerHour: 40,
+    availableToday: false
+  },
+  {
+    id: '5',
+    name: 'Centro de Futsal Indoor',
+    location: 'Zona Norte, 2.3 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=400',
+    sportType: 'Futsal',
+    rating: 4.6,
+    pricePerHour: 45,
+    availableToday: true
+  }
+];
 
 const Index = () => {
   const [sportFilter, setSportFilter] = useState('all');
@@ -53,6 +92,25 @@ const Index = () => {
               searchQuery={searchQuery} 
               searchLocation={searchLocation} 
             />
+            
+            {/* Map Preview Section */}
+            <div className="mt-16">
+              <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+                <h2 className="text-2xl font-bold">Quadras Perto de Você</h2>
+                <Link to="/courts">
+                  <Button variant="outline" className="flex items-center gap-2 mt-2 md:mt-0">
+                    <MapPin size={16} />
+                    Ver todas no mapa
+                  </Button>
+                </Link>
+              </div>
+              
+              <CourtsMap 
+                courts={featuredCourts} 
+                height="400px"
+                interactive={false}
+              />
+            </div>
           </div>
         </section>
         
