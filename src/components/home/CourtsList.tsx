@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import CourtCard, { Court } from './CourtCard';
 import CourtsMap from '../maps/CourtsMap';
@@ -94,7 +95,6 @@ const mockCourts: Court[] = [
 
 const CourtsList = ({ sportFilter, searchQuery, searchLocation }: CourtsListProps) => {
   const [filteredCourts, setFilteredCourts] = useState<Court[]>(mockCourts);
-  const [viewType, setViewType] = useState<'list' | 'map'>('list');
 
   useEffect(() => {
     let filtered = [...mockCourts];
