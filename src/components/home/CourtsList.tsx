@@ -9,7 +9,7 @@ interface CourtsListProps {
 }
 
 // Mock data
-export const mockCourts: Court[] = [
+const mockCourts: Court[] = [
   {
     id: '1',
     name: 'Campo de Futebol Vale Verde',

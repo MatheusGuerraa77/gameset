@@ -5,8 +5,7 @@ import Footer from '@/components/layout/Footer';
 import SearchBar from '@/components/ui/SearchBar';
 import SportFilter from '@/components/home/SportFilter';
 import CourtsList from '@/components/home/CourtsList';
-import CourtsMap from '@/components/maps/CourtsMap';
-import { MapPin, Filter, Map } from 'lucide-react';
+import { MapPin, Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -19,12 +18,6 @@ import {
 import { Slider } from "@/components/ui/slider";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import {
-  Tabs,
-  TabsContent,
-  TabsList,
-  TabsTrigger,
-} from "@/components/ui/tabs";
 
 const Courts = () => {
   const [sportFilter, setSportFilter] = useState('all');
@@ -32,7 +25,6 @@ const Courts = () => {
   const [searchLocation, setSearchLocation] = useState('');
   const [priceRange, setPriceRange] = useState([50, 200]);
   const [showFilters, setShowFilters] = useState(false);
-  const [viewMode, setViewMode] = useState<"list" | "map">("list");
   
   const handleSearch = (query: string, location: string) => {
     setSearchQuery(query);
@@ -80,24 +72,12 @@ const Courts = () => {
                 )}
               </div>
               
-              <div className="mt-4 md:mt-0 flex space-x-3 items-center">
-                <Tabs 
-                  defaultValue="list" 
-                  value={viewMode}
-                  onValueChange={(value) => setViewMode(value as "list" | "map")}
-                  className="mr-2"
-                >
-                  <TabsList>
-                    <TabsTrigger value="list">Lista</TabsTrigger>
-                    <TabsTrigger value="map">Mapa</TabsTrigger>
-                  </TabsList>
-                </Tabs>
-                
+              <div className="mt-4 md:mt-0">
                 <Sheet>
                   <SheetTrigger asChild>
                     <Button variant="outline" className="flex items-center gap-2">
                       <Filter size={18} />
-                      Filtros
+                      Filtros Avançados
                     </Button>
                   </SheetTrigger>
                   <SheetContent>
@@ -188,23 +168,26 @@ const Courts = () => {
               <SportFilter onFilterChange={handleSportFilter} />
             </div>
             
-            {/* Views based on selected mode */}
-            {viewMode === "list" ? (
-              <CourtsList 
-                sportFilter={sportFilter} 
-                searchQuery={searchQuery} 
-                searchLocation={searchLocation} 
-              />
-            ) : (
-              <div className="mb-8">
-                <CourtsMap 
-                  courts={[]} // Here we should pass the filtered courts
-                />
-                <p className="text-sm text-center text-gray-500 mt-2">
-                  Quadras próximas à sua localização atual
-                </p>
+            {/* Courts List */}
+            <CourtsList 
+              sportFilter={sportFilter} 
+              searchQuery={searchQuery} 
+              searchLocation={searchLocation} 
+            />
+            
+            {/* Map Preview (Placeholder) */}
+            <div className="mt-10 p-6 bg-white rounded-lg shadow-md">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-bold">Ver no Mapa</h3>
+                <Button variant="outline" className="flex items-center gap-2">
+                  <MapPin size={18} />
+                  Abrir Mapa Completo
+                </Button>
               </div>
-            )}
+              <div className="h-64 bg-gray-200 rounded-md flex items-center justify-center">
+                <p className="text-gray-500">Mapa interativo será exibido aqui</p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
