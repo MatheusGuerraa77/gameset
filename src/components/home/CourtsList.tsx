@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react';
 import CourtCard, { Court } from './CourtCard';
 import CourtsMap from '../maps/CourtsMap';
+import { MapPin, List } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface CourtsListProps {
   sportFilter: string;
@@ -95,6 +97,7 @@ const mockCourts: Court[] = [
 
 const CourtsList = ({ sportFilter, searchQuery, searchLocation }: CourtsListProps) => {
   const [filteredCourts, setFilteredCourts] = useState<Court[]>(mockCourts);
+  const [viewType, setViewType] = useState<'list' | 'map'>('list');
 
   useEffect(() => {
     let filtered = [...mockCourts];
@@ -137,21 +140,32 @@ const CourtsList = ({ sportFilter, searchQuery, searchLocation }: CourtsListProp
 
   return (
     <div className="space-y-6">
-      {/* Map View */}
-      <div className="mb-6">
-        <h3 className="text-xl font-semibold mb-4">Mapa de Quadras</h3>
-        <CourtsMap courts={filteredCourts} height="400px" interactive={true} />
-      </div>
-
-      {/* List View */}
-      <div>
-        <h3 className="text-xl font-semibold mb-4">Lista de Quadras</h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredCourts.map(court => (
-            <CourtCard key={court.id} court={court} />
-          ))}
+      <Tabs defaultValue="list" onValueChange={(value) => setViewType(value as 'list' | 'map')}>
+        <div className="flex justify-end mb-4">
+          <TabsList>
+            <TabsTrigger value="list" className="flex items-center gap-1">
+              <List size={16} />
+              Lista
+            </TabsTrigger>
+            <TabsTrigger value="map" className="flex items-center gap-1">
+              <MapPin size={16} />
+              Mapa
+            </TabsTrigger>
+          </TabsList>
         </div>
-      </div>
+        
+        <TabsContent value="list" className="mt-0">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredCourts.map(court => (
+              <CourtCard key={court.id} court={court} />
+            ))}
+          </div>
+        </TabsContent>
+        
+        <TabsContent value="map" className="mt-0">
+          <CourtsMap courts={filteredCourts} height="600px" />
+        </TabsContent>
+      </Tabs>
     </div>
   );
 };
