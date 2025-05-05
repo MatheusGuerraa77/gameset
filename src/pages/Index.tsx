@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -83,6 +82,16 @@ const Index = () => {
               </p>
             </div>
             
+            {/* Map View - Added directly below the section title */}
+            <div className="mb-10">
+              <h3 className="text-xl font-semibold mb-4">Mapa de Quadras</h3>
+              <CourtsMap 
+                courts={featuredCourts} 
+                height="400px"
+                interactive={true}
+              />
+            </div>
+            
             {/* Sport Filter */}
             <SportFilter onFilterChange={handleSportFilter} />
             
@@ -92,25 +101,6 @@ const Index = () => {
               searchQuery={searchQuery} 
               searchLocation={searchLocation} 
             />
-            
-            {/* Map Preview Section */}
-            <div className="mt-16">
-              <div className="flex flex-col md:flex-row justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold">Quadras Perto de Você</h2>
-                <Link to="/courts">
-                  <Button variant="outline" className="flex items-center gap-2 mt-2 md:mt-0">
-                    <MapPin size={16} />
-                    Ver todas no mapa
-                  </Button>
-                </Link>
-              </div>
-              
-              <CourtsMap 
-                courts={featuredCourts} 
-                height="400px"
-                interactive={false}
-              />
-            </div>
           </div>
         </section>
         
