@@ -11,72 +11,112 @@ interface CourtsListProps {
   searchLocation: string;
 }
 
-// Mock data
+// Updated mock data with specific venues
 const mockCourts: Court[] = [
   {
     id: '1',
-    name: 'Campo de Futebol Vale Verde',
-    location: 'Centro, 2.5 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1600679472829-3044539ce8ed?q=80&w=400',
-    sportType: 'Futebol',
+    name: 'Arena Branco',
+    location: 'Praia do Recreio, 3.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
     rating: 4.8,
-    pricePerHour: 35,
-    availableToday: true
-  },
-  {
-    id: '2',
-    name: 'Quadra de Basquete Urbana',
-    location: 'Zona Oeste, 1.8 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1505250469679-203ad9ced0cb?q=80&w=400',
-    sportType: 'Basquete',
-    rating: 4.5,
-    pricePerHour: 25,
-    availableToday: true
-  },
-  {
-    id: '3',
-    name: 'Centro de Tênis Sunshine',
-    location: 'Zona Leste, 3.2 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=400',
-    sportType: 'Tênis',
-    rating: 4.9,
-    pricePerHour: 40,
-    availableToday: false
-  },
-  {
-    id: '4',
-    name: 'Arena de Vôlei de Praia',
-    location: 'Área Costeira, 5.1 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=400',
-    sportType: 'Vôlei',
-    rating: 4.7,
-    pricePerHour: 30,
-    availableToday: true
-  },
-  {
-    id: '5',
-    name: 'Centro de Futsal Indoor',
-    location: 'Zona Norte, 2.3 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=400',
-    sportType: 'Futsal',
-    rating: 4.6,
     pricePerHour: 45,
     availableToday: true
   },
   {
-    id: '6',
-    name: 'Quadra de Handebol Comunitária',
-    location: 'Zona Sul, 1.5 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=400',
-    sportType: 'Handebol',
-    rating: 4.3,
-    pricePerHour: 20,
+    id: '2',
+    name: 'Arena Branco',
+    location: 'Praia do Recreio, 3.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=400',
+    sportType: 'Vôlei',
+    rating: 4.7,
+    pricePerHour: 40,
+    availableToday: true
+  },
+  {
+    id: '3',
+    name: 'Arena Branco',
+    location: 'Praia do Recreio, 3.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1610805796122-f8e21cd640a6?q=80&w=400',
+    sportType: 'Futevôlei',
+    rating: 4.9,
+    pricePerHour: 50,
+    availableToday: true
+  },
+  {
+    id: '4',
+    name: 'CT Felipe Roman',
+    location: 'Barra da Tijuca, 5.5 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
+    rating: 4.6,
+    pricePerHour: 55,
     availableToday: false
   },
   {
+    id: '5',
+    name: 'Rondo Esporte Praia',
+    location: 'Ipanema, 7.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
+    rating: 4.7,
+    pricePerHour: 60,
+    availableToday: true
+  },
+  {
+    id: '6',
+    name: 'Rondo Esporte Praia',
+    location: 'Ipanema, 7.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=400',
+    sportType: 'Vôlei',
+    rating: 4.5,
+    pricePerHour: 55,
+    availableToday: true
+  },
+  {
     id: '7',
-    name: 'Arena de Beach Tennis',
-    location: 'Praia Grande, 4.2 km de distância',
+    name: 'Rondo Esporte Praia',
+    location: 'Ipanema, 7.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1610805796122-f8e21cd640a6?q=80&w=400',
+    sportType: 'Futevôlei',
+    rating: 4.6,
+    pricePerHour: 65,
+    availableToday: false
+  },
+  {
+    id: '8',
+    name: 'Arena Baly',
+    location: 'Leblon, 8.4 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1610805796122-f8e21cd640a6?q=80&w=400',
+    sportType: 'Futevôlei',
+    rating: 4.9,
+    pricePerHour: 70,
+    availableToday: true
+  },
+  {
+    id: '9',
+    name: 'Arena Baly',
+    location: 'Leblon, 8.4 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
+    rating: 5.0,
+    pricePerHour: 75,
+    availableToday: true
+  },
+  {
+    id: '10',
+    name: 'Arena Baly',
+    location: 'Leblon, 8.4 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=400',
+    sportType: 'Vôlei',
+    rating: 4.8,
+    pricePerHour: 65,
+    availableToday: true
+  },
+  {
+    id: '11',
+    name: 'Arena Brasil',
+    location: 'Copacabana, 6.7 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
     sportType: 'Beach Tennis',
     rating: 4.7,
@@ -84,13 +124,43 @@ const mockCourts: Court[] = [
     availableToday: true
   },
   {
-    id: '8',
-    name: 'Centro de Futevôlei',
-    location: 'Praia do Sol, 3.8 km de distância',
+    id: '12',
+    name: 'Arena Brasil',
+    location: 'Copacabana, 6.7 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1610805796122-f8e21cd640a6?q=80&w=400',
     sportType: 'Futevôlei',
     rating: 4.6,
-    pricePerHour: 40,
+    pricePerHour: 55,
+    availableToday: true
+  },
+  {
+    id: '13',
+    name: 'Arena Brasil',
+    location: 'Copacabana, 6.7 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=400',
+    sportType: 'Vôlei',
+    rating: 4.5,
+    pricePerHour: 50,
+    availableToday: false
+  },
+  {
+    id: '14',
+    name: '3L',
+    location: 'Barra da Tijuca, 4.8 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
+    rating: 4.7,
+    pricePerHour: 65,
+    availableToday: true
+  },
+  {
+    id: '15',
+    name: '3L',
+    location: 'Barra da Tijuca, 4.8 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=400',
+    sportType: 'Tênis',
+    rating: 4.8,
+    pricePerHour: 70,
     availableToday: true
   }
 ];

@@ -16,14 +16,12 @@ const SportFilter = ({ onFilterChange }: SportFilterProps) => {
 
   const sports: Sport[] = [
     { id: 'all', name: 'Todos os Esportes', icon: '🏆' },
-    { id: 'football', name: 'Futebol', icon: '⚽' },
-    { id: 'basketball', name: 'Basquete', icon: '🏀' },
-    { id: 'tennis', name: 'Tênis', icon: '🎾' },
-    { id: 'volleyball', name: 'Vôlei', icon: '🏐' },
-    { id: 'futsal', name: 'Futsal', icon: '⚽' },
-    { id: 'handball', name: 'Handebol', icon: '🤾' },
-    { id: 'beachtennis', name: 'Beach Tennis', icon: '🎾' },
-    { id: 'footvolley', name: 'Futevôlei', icon: '🏐' },
+    { id: 'Beach Tennis', name: 'Beach Tennis', icon: '🎾' },
+    { id: 'Vôlei', name: 'Vôlei de Praia', icon: '🏐' },
+    { id: 'Futevôlei', name: 'Futevôlei', icon: '🏐' },
+    { id: 'Tênis', name: 'Tênis', icon: '🎾' },
+    { id: 'Futebol', name: 'Futebol', icon: '⚽' },
+    { id: 'Basquete', name: 'Basquete', icon: '🏀' },
   ];
 
   const handleSportClick = (sportId: string) => {

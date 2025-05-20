@@ -11,36 +11,36 @@ import { Button } from '@/components/ui/button';
 import { MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// Mock data para o mapa da página inicial
+// Updated featured courts for the home page map
 const featuredCourts: Court[] = [
   {
     id: '1',
-    name: 'Campo de Futebol Vale Verde',
-    location: 'Centro, 2.5 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1600679472829-3044539ce8ed?q=80&w=400',
-    sportType: 'Futebol',
+    name: 'Arena Branco',
+    location: 'Praia do Recreio, 3.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
     rating: 4.8,
-    pricePerHour: 35,
+    pricePerHour: 45,
     availableToday: true
   },
   {
-    id: '3',
-    name: 'Centro de Tênis Sunshine',
-    location: 'Zona Leste, 3.2 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?q=80&w=400',
-    sportType: 'Tênis',
-    rating: 4.9,
-    pricePerHour: 40,
-    availableToday: false
+    id: '5',
+    name: 'Rondo Esporte Praia',
+    location: 'Ipanema, 7.2 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
+    rating: 4.7,
+    pricePerHour: 60,
+    availableToday: true
   },
   {
-    id: '5',
-    name: 'Centro de Futsal Indoor',
-    location: 'Zona Norte, 2.3 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=400',
-    sportType: 'Futsal',
-    rating: 4.6,
-    pricePerHour: 45,
+    id: '9',
+    name: 'Arena Baly',
+    location: 'Leblon, 8.4 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
+    rating: 5.0,
+    pricePerHour: 75,
     availableToday: true
   }
 ];
