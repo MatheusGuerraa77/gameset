@@ -11,7 +11,7 @@ interface CourtsListProps {
   searchLocation: string;
 }
 
-// Updated mock data with specific venues
+// Updated mock data with venue filtering in mind
 const mockCourts: Court[] = [
   {
     id: '1',
@@ -172,10 +172,10 @@ const CourtsList = ({ sportFilter, searchQuery, searchLocation }: CourtsListProp
   useEffect(() => {
     let filtered = [...mockCourts];
     
-    // Apply sport filter
+    // Apply venue filter
     if (sportFilter && sportFilter !== 'all') {
       filtered = filtered.filter(court => 
-        court.sportType.toLowerCase() === sportFilter.toLowerCase()
+        court.name === sportFilter
       );
     }
     

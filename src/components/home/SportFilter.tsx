@@ -1,10 +1,11 @@
 
 import { useState } from 'react';
 
-interface Sport {
+interface Venue {
   id: string;
   name: string;
   icon: string;
+  sports: string[];
 }
 
 interface SportFilterProps {
@@ -12,40 +13,52 @@ interface SportFilterProps {
 }
 
 const SportFilter = ({ onFilterChange }: SportFilterProps) => {
-  const [activeSport, setActiveSport] = useState('all');
+  const [activeFilter, setActiveFilter] = useState('all');
 
-  const sports: Sport[] = [
-    { id: 'all', name: 'Todos os Esportes', icon: '🏆' },
-    { id: 'Beach Tennis', name: 'Beach Tennis', icon: '🎾' },
-    { id: 'Vôlei', name: 'Vôlei de Praia', icon: '🏐' },
-    { id: 'Futevôlei', name: 'Futevôlei', icon: '🏐' },
-    { id: 'Tênis', name: 'Tênis', icon: '🎾' },
-    { id: 'Futebol', name: 'Futebol', icon: '⚽' },
-    { id: 'Basquete', name: 'Basquete', icon: '🏀' },
+  const venues: Venue[] = [
+    { id: 'all', name: 'Todas as Quadras', icon: '🏆', sports: ['Todos'] },
+    { id: 'Arena Branco', name: 'Arena Branco', icon: '🎾', sports: ['Beach Tennis', 'Vôlei', 'Futevôlei'] },
+    { id: 'CT Felipe Roman', name: 'CT Felipe Roman', icon: '🎾', sports: ['Beach Tennis'] },
+    { id: 'Rondo Esporte Praia', name: 'Rondo Esporte Praia', icon: '🏐', sports: ['Beach Tennis', 'Vôlei', 'Futevôlei'] },
+    { id: 'Arena Baly', name: 'Arena Baly', icon: '🏐', sports: ['Beach Tennis', 'Vôlei', 'Futevôlei'] },
+    { id: 'Arena Brasil', name: 'Arena Brasil', icon: '🏐', sports: ['Beach Tennis', 'Vôlei', 'Futevôlei'] },
+    { id: '3L', name: '3L', icon: '🎾', sports: ['Beach Tennis', 'Tênis'] },
   ];
 
-  const handleSportClick = (sportId: string) => {
-    setActiveSport(sportId);
-    onFilterChange(sportId);
+  const handleVenueClick = (venueId: string) => {
+    setActiveFilter(venueId);
+    onFilterChange(venueId);
+  };
+
+  const getSportsList = (sports: string[]) => {
+    if (sports[0] === 'Todos') return '';
+    return sports.join(', ');
   };
 
   return (
     <div className="w-full overflow-x-auto py-4">
       <div className="flex space-x-2 min-w-max px-1">
-        {sports.map((sport) => (
+        {venues.map((venue) => (
           <button
-            key={sport.id}
-            onClick={() => handleSportClick(sport.id)}
+            key={venue.id}
+            onClick={() => handleVenueClick(venue.id)}
             className={`
-              flex items-center px-4 py-2 rounded-full transition-colors
-              ${activeSport === sport.id
+              flex flex-col items-center px-4 py-2 rounded-full transition-colors
+              ${activeFilter === venue.id
                 ? 'bg-gamesetGreen text-white shadow-md'
                 : 'bg-white text-gamesetDark border border-gamesetGray/80 hover:bg-gamesetGray/30'
               }
             `}
           >
-            <span className="mr-2">{sport.icon}</span>
-            <span className="font-medium">{sport.name}</span>
+            <div className="flex items-center">
+              <span className="mr-2">{venue.icon}</span>
+              <span className="font-medium">{venue.name}</span>
+            </div>
+            {venue.id !== 'all' && (
+              <span className="text-xs mt-1 max-w-48 text-center">
+                {getSportsList(venue.sports)}
+              </span>
+            )}
           </button>
         ))}
       </div>

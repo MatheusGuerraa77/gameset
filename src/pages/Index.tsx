@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -11,42 +10,42 @@ import { Button } from '@/components/ui/button';
 import { MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// Updated featured courts for the home page map
+// Updated featured courts for the home page map with each venue represented once
 const featuredCourts: Court[] = [
   {
     id: '1',
     name: 'Arena Branco',
     location: 'Praia do Recreio, 3.2 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
-    sportType: 'Beach Tennis',
+    sportType: 'Beach Tennis, Vôlei, Futevôlei',
     rating: 4.8,
     pricePerHour: 45,
     availableToday: true
+  },
+  {
+    id: '4',
+    name: 'CT Felipe Roman',
+    location: 'Barra da Tijuca, 5.5 km de distância',
+    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
+    sportType: 'Beach Tennis',
+    rating: 4.6,
+    pricePerHour: 55,
+    availableToday: false
   },
   {
     id: '5',
     name: 'Rondo Esporte Praia',
     location: 'Ipanema, 7.2 km de distância',
     imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
-    sportType: 'Beach Tennis',
+    sportType: 'Beach Tennis, Vôlei, Futevôlei',
     rating: 4.7,
     pricePerHour: 60,
-    availableToday: true
-  },
-  {
-    id: '9',
-    name: 'Arena Baly',
-    location: 'Leblon, 8.4 km de distância',
-    imageUrl: 'https://images.unsplash.com/photo-1623037854588-ef4b366bae51?q=80&w=400',
-    sportType: 'Beach Tennis',
-    rating: 5.0,
-    pricePerHour: 75,
     availableToday: true
   }
 ];
 
 const Index = () => {
-  const [sportFilter, setSportFilter] = useState('all');
+  const [venueFilter, setVenueFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchLocation, setSearchLocation] = useState('');
 
@@ -57,10 +56,10 @@ const Index = () => {
     console.log(`Buscando por "${query}" em "${location}"`);
   };
 
-  const handleSportFilter = (sportId: string) => {
-    setSportFilter(sportId);
+  const handleVenueFilter = (venueId: string) => {
+    setVenueFilter(venueId);
     // In a real app, this could trigger an API call
-    console.log(`Filtrando por esporte: ${sportId}`);
+    console.log(`Filtrando por local: ${venueId}`);
   };
 
   return (
@@ -77,18 +76,18 @@ const Index = () => {
             <div className="flex flex-col md:flex-row justify-between items-center mb-8">
               <h2 className="text-3xl font-bold">Encontre Sua Quadra Perfeita</h2>
               <p className="text-gray-600">
-                {sportFilter === 'all' 
+                {venueFilter === 'all' 
                   ? 'Descubra quadras para todos os esportes perto de você' 
-                  : `Mostrando quadras de ${sportFilter}`}
+                  : `Mostrando quadras de ${venueFilter}`}
               </p>
             </div>
             
-            {/* Sport Filter */}
-            <SportFilter onFilterChange={handleSportFilter} />
+            {/* Sport Filter renamed to Venue Filter */}
+            <SportFilter onFilterChange={handleVenueFilter} />
             
             {/* Courts List */}
             <CourtsList 
-              sportFilter={sportFilter} 
+              sportFilter={venueFilter} 
               searchQuery={searchQuery} 
               searchLocation={searchLocation} 
             />
